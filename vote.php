@@ -48,7 +48,7 @@ get_header(); ?>
 ?>
 						<div class="submit">
 							<label for="email">E-mail Address: </label><input class="email" type="email" name="vote-form-email">
-							<input type="submit" name="vote-form-submit" value="Cast Your Votes">
+							<input type="submit" name="vote-form-submit" value="Cast Your Vote">
 						</div>
 					</form>
 				</section> 
