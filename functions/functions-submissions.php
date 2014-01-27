@@ -14,24 +14,24 @@ add_action('load-post-new.php','submission_meta_setup');
 function submission_meta_add() {
 
 	add_meta_box (
-		'ted_submission_meta',
+		'kt_submission_meta',
 		'Submission Info',
-		'ted_submission_meta',
+		'kt_submission_meta',
 		'submissions',
 		'side',
 		'default');
 }
 
 
-function ted_submission_meta() {
+function kt_submission_meta() {
 
 	// Get current values for all of the meta
 	
 	global $post;
-	wp_nonce_field(basename( __FILE__ ), 'ted-form-nonce' );
-	$visible = get_post_meta($post->ID, 'ted-form-visible', true) ? get_post_meta($post->ID, 'ted-form-visible', true) : 'show';
-	$order = get_post_meta($post->ID, 'ted-form-order', true) ? get_post_meta($post->ID, 'ted-form-order', true) : '0';
-	$video = get_post_meta($post->ID, 'ted-form-video', true) ? get_post_meta($post->ID, 'ted-form-video', true) : '';
+	wp_nonce_field(basename( __FILE__ ), 'kt-form-nonce' );
+	$visible = get_post_meta($post->ID, 'kt-form-visible', true) ? get_post_meta($post->ID, 'kt-form-visible', true) : 'show';
+	$order = get_post_meta($post->ID, 'kt-form-order', true) ? get_post_meta($post->ID, 'kt-form-order', true) : '0';
+	$video = get_post_meta($post->ID, 'kt-form-video', true) ? get_post_meta($post->ID, 'kt-form-video', true) : '';
 
 	// Make special arrangements for possibly disabling the end date/time fields
 
@@ -45,14 +45,14 @@ function ted_submission_meta() {
 
 	?>
 	<style type="text/css">
-		#ted-form-main {width: 100%}
-		#ted-form-order, #ted-form-video {width: 80px;}
+		#kt-form-main {width: 100%}
+		#kt-form-order, #kt-form-video {width: 80px;}
 	</style>
 	<script type="text/javascript">
 		function visibleCheckBox() {
-			var checkBox = document.getElementById('ted-form-visible');
-			var orderInput = document.getElementById('ted-form-order');
-			var videoInput = document.getElementById('ted-form-video');
+			var checkBox = document.getElementById('kt-form-visible');
+			var orderInput = document.getElementById('kt-form-order');
+			var videoInput = document.getElementById('kt-form-video');
 			if (checkBox.checked) {
 				orderInput.disabled = false;
 				orderInput.style.backgroundColor = '#FFFFFF';
@@ -69,16 +69,16 @@ function ted_submission_meta() {
 			}
 		}
 	</script>
-	<table id="ted-form-main">
+	<table id="kt-form-main">
 		<tr>
-			<th><label for="ted-form-visible">Show in Listing:</label></th>
-			<td><input type="checkbox" name="ted-form-visible" id="ted-form-visible" value="show" <?php echo $checked; ?> onchange="visibleCheckBox()"></td>
+			<th><label for="kt-form-visible">Show in Listing:</label></th>
+			<td><input type="checkbox" name="kt-form-visible" id="kt-form-visible" value="show" <?php echo $checked; ?> onchange="visibleCheckBox()"></td>
 		</tr><tr>
-			<th><label for="ted-form-order">List Position:</label></th>
-			<td><input type="text" name="ted-form-order" id="ted-form-order" value="<?php echo $order; ?>" <?php echo $disabled . " " . $style; ?>></td>
+			<th><label for="kt-form-order">List Position:</label></th>
+			<td><input type="text" name="kt-form-order" id="kt-form-order" value="<?php echo $order; ?>" <?php echo $disabled . " " . $style; ?>></td>
 		</tr><tr>
-			<th><label for="ted-form-video">YouTube ID:</label></th>
-			<td><input type="text" name="ted-form-video" id="ted-form-video" value="<?php echo $video; ?>" <?php echo $disabled . " " . $style; ?>></td>
+			<th><label for="kt-form-video">YouTube ID:</label></th>
+			<td><input type="text" name="kt-form-video" id="kt-form-video" value="<?php echo $video; ?>" <?php echo $disabled . " " . $style; ?>></td>
 		</tr>
 	</table>
 	<?php
@@ -90,7 +90,7 @@ function submission_meta_save($post_id, $post) {
 	if ($parent_id = wp_is_post_revision($post_id)) 
 		$post_id = $parent_id;
 
-	if (!isset($_POST['ted-form-nonce']) || !wp_verify_nonce($_POST['ted-form-nonce'], basename( __FILE__ ))) {
+	if (!isset($_POST['kt-form-nonce']) || !wp_verify_nonce($_POST['kt-form-nonce'], basename( __FILE__ ))) {
 		return $post_id;
 	}
 
@@ -102,20 +102,20 @@ function submission_meta_save($post_id, $post) {
 
 	$input = array();
 
-	$input['visible'] = (isset($_POST['ted-form-visible']) && $_POST['ted-form-visible'] == 'show' ? 'show' : 'hide');
-	$input['order'] = (isset($_POST['ted-form-order']) ? $_POST['ted-form-order'] : '0');
-	$input['video'] = (isset($_POST['ted-form-video']) ? $_POST['ted-form-video'] : get_the_title());
+	$input['visible'] = (isset($_POST['kt-form-visible']) && $_POST['kt-form-visible'] == 'show' ? 'show' : 'hide');
+	$input['order'] = (isset($_POST['kt-form-order']) ? $_POST['kt-form-order'] : '0');
+	$input['video'] = (isset($_POST['kt-form-video']) ? $_POST['kt-form-video'] : get_the_title());
 
 	foreach ($input as $field => $value) {
 
-		$old = get_post_meta($post_id, 'ted-form-' . $field, true);
+		$old = get_post_meta($post_id, 'kt-form-' . $field, true);
 
 		if ($value && '' == $old)
-			add_post_meta($post_id, 'ted-form-' . $field, $value, true);
+			add_post_meta($post_id, 'kt-form-' . $field, $value, true);
 		else if ($value && $value != $old)
-			update_post_meta($post_id, 'ted-form-' . $field, $value);
+			update_post_meta($post_id, 'kt-form-' . $field, $value);
 		else if ('' == $value && $old)
-			delete_post_meta($post_id, 'ted-form-' . $field, $old);
+			delete_post_meta($post_id, 'kt-form-' . $field, $old);
 	}
 }
 
