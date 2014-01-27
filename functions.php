@@ -82,19 +82,19 @@ function remove_menus() {
 
 function custom_post_types() {
 
-	register_post_type('news', array(
+	register_post_type('submissions', array(
 		'labels' => array(
-			'name' => 'News',
-			'singular_name' => 'News'),
+			'name' => 'Submissions',
+			'singular_name' => 'Submission'),
 		'public' => true,
 		'hierarchical' => false,
-		'supports' => array('title', 'editor', 'excerpt', 'author'),
-		'register_meta_box_cb' => 'news_meta_add',
+		'supports' => array('title', 'editor'),
+		'register_meta_box_cb' => 'submission_meta_add',
 		'taxonomies' => array(),
 		'has_archive' => false,
 		));
 }
-//add_action('init', 'custom_post_types');
+add_action('init', 'custom_post_types');
 
 
 /* Change dashboard icons for the custom post types.
@@ -124,5 +124,7 @@ function cpt_icons() {
 /* To include other collections of functions, include_once() the relevant files here. */
 
 include_once("functions/functions-nav.php");
+include_once("functions/functions-submissions.php");
+
 
 ?>
