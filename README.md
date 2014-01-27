@@ -1,10 +1,33 @@
-![MiniBill](http://billcolumbia.com/minibill.png)
+# Knight-Thon Videos Site
+___
 
-# Version 1.0 (Not yet pushed)
+## Post-Types:
+* Videos hosted on YouTube. Post type will use video ID.
 
-After first adapting _s to create MiniBill, we have moved to a hand baked code base. Much more minimal now. *Please not that this is not version 1.0. [Check the tag](https://github.com/billcolumbia/MiniBill/tags) before use.
+## Pages: 
+* About
+* Vote
+* Video specific page
 
-## [Doumentation](https://github.com/billcolumbia/MiniBill/wiki)
+## Features: 
 
-## Heads up! If you are not part of OSI:
-Update the footer so that you aren't pulling our logos and info. You don't want that. Make sure you have Codekit or something that can compile compass.
+* Want to display vote counts.
+* Does not need view page.
+* Thermometer for each video. Numbers for donations/votes.
+* Video specific page to have social buttons
+* Need to be able to close voting at a specific time.
+
+
+## Details:
+
+* $1 = 1 Vote
+* Any email can be used to vote, no duplicates.
+* Links off of KT main site.
+* AJAX Grabs the team total $ Every few hours
+
+
+
+
+### Deadline:
+* Basic site with video voting. **Friday February 7th**
+* Extra features with Donor Drive Linked. TBD. 
