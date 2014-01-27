@@ -26,7 +26,7 @@ get_header(); ?>
 						}
 						else {
 ?>
-						<p class="info">You can vote for three videos:</p>
+						<p class="info">Vote for a Video:</p>
 <?php
 						}
 
