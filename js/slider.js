@@ -27,8 +27,6 @@ $(document).ready( function(){
 		totalWidth += 325;
 	});
 
-
-
 	$('.gallery-ul').css('width',totalWidth + 'px');
 
 
