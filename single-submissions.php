@@ -12,7 +12,7 @@ get_header(); ?>
 						get_template_part( 'content', 'page' );
 					} ?>
 				</div>
-				<section class="videos">
+				<section class="single-video">
 					<form method="POST">
 						
 <?php
@@ -31,17 +31,22 @@ get_header(); ?>
 						while (have_posts()) {
 							the_post();
 							$title = get_the_title();
-							$slug = $post->post_name;
 							$videoid = get_post_meta($post->ID, 'kt-form-video', true);
-							$donations = get_post_meta($post->ID, 'kt-form-donations', true);
 							$link = $post->guid;
 
+							$donations = intval(get_post_meta($post->ID, 'kt-form-donations', true));
+							$votes = intval(get_post_meta($post->ID, 'kt-form-votes', true));
+
+							$total = intval($votes + $donations / 10);
+
 ?>	
-						<article class="video" data-title="<?php echo $slug; ?>">
+						<article class="video">
 							<a href="<?php echo $link; ?>"><h3><?php echo $title; ?></h3></a>
 							<iframe src="http://www.youtube.com/embed/<?php echo $videoid; ?>" frameborder="0" allowfullscreen></iframe>
-							<input type="checkbox" name="vote-form-video[]" value="<?php echo $slug; ?>" id="vote-form-<?php echo $slug; ?>">
+							<input type="radio" name="vote-form-video" value="<?php echo $post->ID; ?>" checked disabled>
 							<p>Donations: $<?php echo $donations; ?></p>
+							<p>Votes: <?php echo $votes; ?></p>
+							<p>Total: <?php echo $total; ?></p>
 						</article>
 
 <?php 					}
@@ -53,5 +58,5 @@ get_header(); ?>
 					</form>
 				</section> 
 			</div>
-
+			<script language="javascript" type="text/javascript" src="js/slider.js"></script>
 <?php get_footer(); ?>
