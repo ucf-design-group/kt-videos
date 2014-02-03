@@ -4,7 +4,7 @@
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width" />
 		<meta http-equiv="X-UA-Compatible" content="chrome=1" />
-		<title><?php wp_title( '|', true, 'right' ); ?></title>
+		<title><?php wp_title( '|', true, 'right' ); ?> Knight-Thon</title>
 		<!--[if lt IE 9]>
 		<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 		<![endif]-->
@@ -22,7 +22,10 @@
 	<body <?php echo $body_class; ?>>
 		<div class="page">
 			<header>
-				<div class="logo"></div>
+				<div class="content">
+					<a href="<?php echo site_url(); ?>"><div class="logo"></div></a>
+					<h1>Why Do You Dance?</h1>
+				</div>
 				<nav class="main-menu full">
 					<div class="screen-reader-text skip-link"><a href="#UPDATE ME" title="Skip to content">Skip to content</a></div>
 					<div class="compact-menu">

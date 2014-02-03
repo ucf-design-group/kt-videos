@@ -26,34 +26,68 @@ html
 body
 	font: 62.5%/1.5 $baseTypeFace
 	font-weight: 600 
+	background-color: #fafaff
 
-header, nav, section
+section, .content
 	margin: auto
 	max-width: 1000px
-	
+
+
+header
+	width: 100%
+	background-image: url(resources/banner.png)
+	background-repeat: no-repeat
+	background-position: center
+
+
+
+.content
+
+	text-align: center
+
+
 	.logo
-		background-color: red
-		width: 1000px
-		height: 200px
-		// margin: 0 auto 3em
+		width: 250px
+		height: 221px
+		background-image: url(resources/logo.png)
+		background-repeat: no-repeat
+		margin-top: 3em
+	a
+		display: inline-block
+
+	h1
+		font-size: 5em
+		vertical-align: middle
+		text-align: center
+
+
 nav
 	width 100%
-	background-color: yellow
+	background-color: rgba(0, 0, 0, 0.75)
+	// float: left
+	// padding: 0
+	// margin:  0 0 1em 0
+
 	@extend %clearfix
 
 	ul
 		text-align: center
-		width: 100%
-		padding: 0 0 2em 0
+		width: 1000px
+		margin: 0 auto 0 auto
+		// padding: 0
+		display: block
 
 		li
 			float: left
-			display: inline-block
 			width: 50%
+			// margin: auto
+			// text-align: center
 
 			a
 				padding: 1em 2em
 				font-size: 1.5em
+				color: white
+				display: block
 
 	
 .main
