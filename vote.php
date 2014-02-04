@@ -35,13 +35,24 @@ get_header(); ?>
 						while ($videoloop->have_posts()) {
 							$videoloop->the_post();
 							$title = get_the_title();
-							$slug = $post->post_name;
 							$videoid = get_post_meta($post->ID, 'kt-form-video', true);
+							$link = $post->guid;
+
+							$donations = intval(get_post_meta($post->ID, 'kt-form-donations', true));
+							$votes = intval(get_post_meta($post->ID, 'kt-form-votes', true));
+
+							$total = intval($votes + $donations / 10);
+
 ?>	
-						<article class="video" data-title="<?php echo $slug; ?>">
-							<h3><?php echo $title; ?></h3>
+						<article class="video">
+							<a href="<?php echo $link; ?>"><h3><?php echo $title; ?></h3></a>
 							<iframe src="http://www.youtube.com/embed/<?php echo $videoid; ?>" frameborder="0" allowfullscreen></iframe>
-							<input type="checkbox" name="vote-form-video[]" value="<?php echo $slug; ?>" id="vote-form-<?php echo $slug; ?>">
+							<input type="radio" name="vote-form-video" value="<?php echo $post->ID; ?>">
+							<div class ="votes">	
+								<p>Donations: $<?php echo $donations; ?></p>
+								<p><span>Total: <?php echo $total; ?></span></p>
+								<p>Votes: <?php echo $votes; ?></p>
+							</div>
 						</article>
 
 <?php 					}
