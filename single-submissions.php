@@ -57,6 +57,21 @@ get_header(); ?>
 						</div>
 					</form>
 				</section> 
+				<section>
+					<div class="gallery-wrapper">
+				      <div class="gallery-mask">
+				        <ul id="gallery-ul">
+				        </ul>
+				      </div>
+				      <div class="leftbtn">
+				        <div class="leftbtn-inner"></div>
+				      </div>
+				      
+				      <div class="rightbtn">
+				        <div class="rightbtn-inner"></div>
+				      </div>
+  					</div>
+  				</section>
 			</div>
-			<script language="javascript" type="text/javascript" src="js/slider.js"></script>
 <?php get_footer(); ?>
+<?php include 'slider.php'; ?>
