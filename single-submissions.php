@@ -5,13 +5,6 @@ include($include);
 get_header(); ?>
 
 			<div class="content-area">
-				<div class="main"> 
-					<?php
-					while (have_posts()) {
-						the_post();
-						get_template_part( 'content', 'page' );
-					} ?>
-				</div>
 				<section class="single-video">
 					<form method="POST">
 						
@@ -41,12 +34,19 @@ get_header(); ?>
 
 ?>	
 						<article class="video">
-							<a href="<?php echo $link; ?>"><h3><?php echo $title; ?></h3></a>
-							<iframe src="http://www.youtube.com/embed/<?php echo $videoid; ?>" frameborder="0" allowfullscreen></iframe>
-							<input type="radio" name="vote-form-video" value="<?php echo $post->ID; ?>" checked disabled>
-							<p>Donations: $<?php echo $donations; ?></p>
-							<p>Votes: <?php echo $votes; ?></p>
-							<p>Total: <?php echo $total; ?></p>
+							<div class="video-container">
+								<iframe src="http://www.youtube.com/embed/<?php echo $videoid; ?>" frameborder="0" allowfullscreen></iframe>
+								<input type="hidden" name="vote-form-video" value="<?php echo $post->ID; ?>" checked>
+							</div>
+							<div class="video-content">
+								<a href="<?php echo $link; ?>"><h3><?php echo $title; ?></h3></a>
+								<p><?php echo get_the_content(); ?></p>
+								<div class="votes">
+									<p><span>Donations: </span>$<?php echo $donations; ?></p>
+									<p class="vote-total"><span>Total: </span><?php echo $total; ?></p>
+									<p><span>Votes: </span><?php echo $votes; ?></p>
+								</div>
+							</div>
 						</article>
 
 <?php 					}
@@ -57,7 +57,7 @@ get_header(); ?>
 						</div>
 					</form>
 				</section> 
-				<section>
+				<section class="slider">
 					<div class="gallery-wrapper">
 				      <div class="gallery-mask">
 				        <ul id="gallery-ul">

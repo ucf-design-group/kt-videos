@@ -1,4 +1,5 @@
 <?php
+$numVideos = 0;
 //WHILE LOOP - GET VIDEOID -- GET HREF
 $videoloop = new WP_QUERY(array('post_type' => 'submissions', 'posts_per_page' => -1, 'orderby' =>'meta_value', 'order' => 'ASC', 'meta_key' => 'kt-form-order'));
 while ($videoloop->have_posts()) {
@@ -21,20 +22,20 @@ $link = $post->guid;
 	gallery.appendChild(li);
 </script>
 <?php
+$numVideos++;
 }
 ?>
 
 <script type="text/javascript">
-var numImages = 0;
 var currentImage = 1;
 var totalWidth= 0;
 
 function moveRight(){
 
-	if(currentImage<numImages-4){
+	if(currentImage<<?php echo $numVideos; ?>-2){
 		$('#gallery-ul').animate({'marginLeft':'-=325px'} , 1000 , 'swing' );
 		currentImage++;
-		console.log("Working.");
+		console.log(currentImage);
 	}
 }
 
@@ -43,12 +44,12 @@ function moveLeft(){
 	if(currentImage>1){
 		$('#gallery-ul').animate({'marginLeft':'+=325px'} , 1000 , 'swing' );
 		currentImage--;
+		console.log(currentImage);
 	}
 }
 
 $(document).ready( function(){
 	$('.gallery-li').each(function(){
-		numImages++;
 		totalWidth += 325;
 	});
 
