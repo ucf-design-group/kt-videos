@@ -59,6 +59,8 @@ $(document).ready(function () {
 			$(this).children("input").prop('checked', true);
 		}
 	});
+	setInterval(function() { countdownTimer(); }, 1000);
+
 });
 
 
