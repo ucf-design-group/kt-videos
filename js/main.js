@@ -45,7 +45,6 @@ $(document).ready(function () {
 		if ($(this).hasClass("checked")) {
 
 			$(this).removeClass("checked");
-			$(this).children("input").prop('checked', false);
 		}
 
 		else {
@@ -56,7 +55,6 @@ $(document).ready(function () {
 			});
 
 			$(this).addClass("checked");
-			$(this).children("input").prop('checked', true);
 		}
 	});
 	setInterval(function() { countdownTimer(); }, 1000);
