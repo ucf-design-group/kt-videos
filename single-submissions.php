@@ -39,22 +39,24 @@ get_header(); ?>
 								<input type="hidden" name="vote-form-video" value="<?php echo $post->ID; ?>" checked>
 							</div>
 							<div class="video-content">
-								<a href="<?php echo $link; ?>"><h3><?php echo $title; ?></h3></a>
-								<p><?php echo get_the_content(); ?></p>
+								<div class="video-info">
+									<a href="<?php echo $link; ?>"><h3><?php echo $title; ?></h3></a>
+									<p><?php echo get_the_content(); ?></p>
+								</div>
 								<div class="votes">
 									<p><span>Donations: </span>$<?php echo $donations; ?></p>
 									<p class="vote-total"><span>Total: </span><?php echo $total; ?></p>
 									<p><span>Votes: </span><?php echo $votes; ?></p>
+								</div>
+								<div class="submit">
+									<label for="email">E-mail Address:</label><input class="email" type="email" name="vote-form-email">
+									<input type="submit" name="vote-form-submit" value="Vote For This Video">
 								</div>
 							</div>
 						</article>
 
 <?php 					}
 ?>
-						<div class="submit">
-							<label for="email">E-mail Address: </label><input class="email" type="email" name="vote-form-email">
-							<input type="submit" name="vote-form-submit" value="Cast Your Vote">
-						</div>
 					</form>
 				</section> 
 				<section class="slider">

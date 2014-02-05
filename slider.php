@@ -6,6 +6,8 @@ while ($videoloop->have_posts()) {
 $videoloop->the_post();
 $videoid = get_post_meta($post->ID, 'kt-form-video', true);
 $link = $post->guid;
+
+$decodedlink = html_entity_decode($link);
 ?>
 <script type="text/javascript">
 	var videoSrcID = "<?php echo $videoid; ?>";
@@ -14,7 +16,7 @@ $link = $post->guid;
 	var a = document.createElement('a');
 	var img = document.createElement('img');
 	li.className = "gallery-li";
-	a.href = "<?php echo $link; ?>";
+	a.href = "<?php echo $decodedlink; ?>";
 	img.className = "gallery-image";
 	img.src = "http://img.youtube.com/vi/"+videoSrcID+"/0.jpg";
 	a.appendChild(img);
