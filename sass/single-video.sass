@@ -1,0 +1,63 @@
+// Base variables
+$baseTypeFace: 'Open Sans', sans-serif
+$yellow: #F8ED31
+$green: #99cc33
+$pink: #EC008B
+$blue: #00ADEF 
+$lightgrey: #dddddd
+$transparent: rgba(0, 0, 0, 0.75)
+$fallback: rgb(49, 49, 49)
+
+section.single-video
+	
+	padding-top: 2em
+
+	article.video
+		width: 100%
+
+		@extend %clearfix
+		
+		div.video-container
+			width: 50%
+			float: left
+
+			iframe
+				width: 480px
+				height: 290px
+
+		div.video-content
+			width: 50%
+			float: right
+
+			h3
+				font-size: 2.5em
+				text-align: center
+
+			.votes
+				width: 100%
+				text-align: center
+
+				p
+					float: left
+					width: 33%
+					font-size: 3em
+
+					span
+						font-size: 0.5em
+						float: left
+						width: 100%
+
+				p.vote-total
+					color: $pink
+					font-size: 3.5em
+
+	div.submit
+		padding: 2em 1em 1em 1em
+		text-align: center
+
+		.email
+			width: 200px
+
+section.slider
+
+	padding-bottom: 2em
