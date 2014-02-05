@@ -8,8 +8,6 @@
 
 ?>
 <article>
-						<h1 class="entry-title"><?php the_title(); ?></h1>
-
 
 <!-- PAGE CONTENT START -->
 <?php the_content(); ?>
