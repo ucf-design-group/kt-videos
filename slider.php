@@ -31,7 +31,7 @@ var totalWidth= 0;
 
 function moveRight(){
 
-	if(currentImage<numImages-1){
+	if(currentImage<numImages-2){
 		$('#gallery-ul').animate({'marginLeft':'-=162.5px'} , 1000 , 'swing' );
 		currentImage++;
 	}
