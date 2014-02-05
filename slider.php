@@ -31,32 +31,35 @@ var totalWidth= 0;
 
 function moveRight(){
 
-	if(currentImage<numImages-2){
-		$('#gallery-ul').animate({'marginLeft':'-=162.5px'} , 1000 , 'swing' );
+	if(currentImage<numImages-4){
+		$('#gallery-ul').animate({'marginLeft':'-=325px'} , 1000 , 'swing' );
 		currentImage++;
+		console.log("Working.");
 	}
 }
 
 function moveLeft(){
 
 	if(currentImage>1){
-		$('#gallery-ul').animate({'marginLeft':'+=162.5px'} , 1000 , 'swing' );
+		$('#gallery-ul').animate({'marginLeft':'+=325px'} , 1000 , 'swing' );
 		currentImage--;
 	}
 }
 
-$('.gallery-li').each(function(){
-	numImages++;
-	totalWidth += 325;
-});
+$(document).ready( function(){
+	$('.gallery-li').each(function(){
+		numImages++;
+		totalWidth += 325;
+	});
 
-$('#gallery-ul').css('width',totalWidth + 'px');
+	$('#gallery-ul').css('width',totalWidth + 'px');
 
-$('.rightbtn').click(function(){
-	moveRight();
-});
+	$('.rightbtn').unbind("click").click(function(){
+		moveRight();
+	});
 
-$('.leftbtn').click(function(){
-	moveLeft();
+	$('.leftbtn').unbind("click").click(function(){
+		moveLeft();
+	});
 });
 </script>
