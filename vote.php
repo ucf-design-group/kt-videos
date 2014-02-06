@@ -20,12 +20,12 @@ get_header(); ?>
 <?php
 					if ($message != null) {
 ?>
-					<p class="info"><?php echo $message; ?></p>
+					<h2 class="info"><?php echo $message; ?></h2>
 <?php
 					}
 					else {
 ?>
-					<p class="info">Vote for a Video:</p>
+					<h2 class="info">Vote for a Video:</h2>
 <?php
 					}
 
@@ -45,7 +45,7 @@ get_header(); ?>
 ?>	
 					<article class="video">
 						<form method="POST">
-							<a href="<?php echo $link; ?>"><h2><?php echo $title; ?></h2></a>
+							<a href="<?php echo $link; ?>"><h3><?php echo $title; ?></h3></a>
 							<iframe src="http://www.youtube.com/embed/<?php echo $videoid; ?>" frameborder="0" allowfullscreen></iframe>
 							<input type="hidden" name="vote-form-video" value="<?php echo $post->ID; ?>">
 							<div class ="votes">	

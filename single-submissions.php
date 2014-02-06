@@ -11,12 +11,12 @@ get_header(); ?>
 <?php
 						if ($message != null) {
 ?>
-						<p class="info"><?php echo $message; ?></p>
+						<h2 class="info"><?php echo $message; ?></h2>
 <?php
 						}
 						else {
 ?>
-						<p class="info">Vote for a Video:</p>
+						<h2 class="info">Vote for a Video:</h2>
 <?php
 						}
 
@@ -43,18 +43,17 @@ get_header(); ?>
 									<a href="<?php echo $link; ?>"><h3><?php echo $title; ?></h3></a>
 									<p><?php echo get_the_content(); ?></p>
 								</div>
-								<div class="votes">
-									<p><span>Donations: </span>$<?php echo $donations; ?></p>
-									<p class="vote-total"><span>Total: </span><?php echo $total; ?></p>
-									<p><span>Votes: </span><?php echo $votes; ?></p>
-								</div>
-								<div class="submit">
-									<label for="email">E-mail Address:</label><input class="email" type="email" name="vote-form-email">
-									<input type="submit" name="vote-form-submit" value="Vote For This Video">
-								</div>
+							</div>
+							<div class="votes">
+								<p><span>Donations: </span>$<?php echo $donations; ?></p>
+								<p class="vote-total"><span>Total: </span><?php echo $total; ?></p>
+								<p><span>Votes: </span><?php echo $votes; ?></p>
+							</div>
+							<div class="submit">
+								<label for="email">E-mail Address: </label><input class="email" type="email" name="vote-form-email">
+								<input type="submit" name="vote-form-submit" value="Vote For This Video">
 							</div>
 						</article>
-
 <?php 					}
 ?>
 					</form>

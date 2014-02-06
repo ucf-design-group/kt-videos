@@ -36,6 +36,7 @@ body
 	font: 62.5%/1.5 $baseTypeFace
 	font-weight: 600 
 	background-color: #ffffff
+	font-size: 1em
 
 section, .content
 	margin: auto
@@ -49,25 +50,30 @@ header
 	background-position: center
 
 h1
-	font-size: 2.5em
-	// margin: 1em 0 0.5em 0
+	font-size: 5em
+	text-shadow: 2px 2px #000000
 	color: $blue
+	font-family: 'Covered By Your Grace', cursive
 
 h2
-	font-size: 2em
-	margin: 1em 0 0.5em 0
-	color: $pink
-h3
 	font-size: 1.7em
-	margin: 0.5em 0 0.5em 0
-
-a
+	margin: 1em 0 0.5em 0
 	color: $blue
+h3
+	font-size: 1.5em
+	margin: 0.5em 0 0.5em 0
+	transition: color 0.5s
+	color: $pink
+	
+	&:hover
+		color: $blue
+a
+	color: white
 	text-decoration: none
 	transition: color 0.5s
 
 	&:hover
-		color: $pink
+		color: $blue
 p
 	margin: 1em 0 0.5em 0
 
@@ -85,7 +91,6 @@ p
 		display: inline-block
 
 	h1
-		font-size: 5em
 		vertical-align: middle
 		text-align: center
 
@@ -109,8 +114,6 @@ nav
 
 			a
 				padding: 1em 2em
-				font-size: 1.5em
-				color: white
 				display: block
 
 	
@@ -139,16 +142,26 @@ footer
 
 // Video Vote Page
 
+.steps
+	width: 100%
+	background-color: $pink
+
+
+	li
+		float: left
+		width: 33.3333333%
+		background-image: url(resources/arrow-right.png)
+		background-repeat: no-repeat
+		height: 32px
+		line-height: 32px
+		background-color: $pink
+		padding: 0px 50px 0px 50px
+
 section.videos
 	width: 100%
 	margin: 2em auto
-
 	@extend %clearfix
 
-	p.info
-		text-align: center
-		font-size: 1.5em
-		color: black
 
 	article.video
 		border: 10px solid white
@@ -163,27 +176,27 @@ section.videos
 		&:hover, &:focus
 			background-color: $blue
 
-			a
-				color: $pink
 		&.checked
 			background-color: $blue
 
 			a
 				color: white
 
+
+
 		&:nth-child(2n+2)
 			clear: left
 
-		iframe, input
-			margin: auto
-			display: block
+
 
 		iframe
+			margin: auto
+			display: block
 			width: 360px
 			height: 270px
 			margin-bottom: 1em
 		
-		h2
+		h3
 			text-align: center
 			margin-bottom: 1em
 
@@ -193,24 +206,16 @@ section.videos
 			text-align: center
 
 			p
-				font-size: 1.3em
 				float: left
 				width: 33.3333333%
-
+				
 			span
-				font-size: 1.5em
+				font-size: 1.3em
 				color: $pink
-	div.submit
-		// width: 100%
-		// background-color: $blue
-		// clear: both
-		// padding: 1em 0 1em 1em
-		// color: white
-		// border-radius: 20px
-		// margin-top: 1em
-
-		.email
-			// width: 200px
+		.submit
+			clear: both
+			margin: auto
+			text-align: center
 
 
 
