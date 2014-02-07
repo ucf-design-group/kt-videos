@@ -21,6 +21,7 @@ $baseTypeFace: 'Open Sans', sans-serif
 $yellow: #F8ED31
 $green: #99cc33
 $pink: #EC008B
+$lightpink: #ffcbd7
 $blue: #00ADEF 
 $lightgrey: #dddddd
 $transparent: rgba(0, 0, 0, 0.75)
@@ -94,9 +95,6 @@ p
 		vertical-align: middle
 		text-align: center
 
-.content-area
-	margin: 2em 0
-
 nav
 	width: 100%
 	background: $transparent
@@ -117,8 +115,7 @@ nav
 				display: block
 
 	
-.main
-	
+.content-area
 	margin: auto
 	max-width: 1000px
 	padding: 1em
@@ -144,24 +141,30 @@ footer
 
 .steps
 	width: 100%
-	background-color: $pink
-
 
 	li
 		float: left
-		width: 33.3333333%
+		width: 30%
 		background-image: url(resources/arrow-right.png)
 		background-repeat: no-repeat
-		height: 32px
 		line-height: 32px
-		background-color: $pink
-		padding: 0px 50px 0px 50px
+		background-position: 90% center
+		padding: 15px 50px 15px 50px
+		border-radius: 20px
+		background-color: $lightpink
+		color: $fallback
+		border: 3px solid $pink
+
+		&:nth-child(2)
+			margin: 0 5%
 
 section.videos
 	width: 100%
-	margin: 2em auto
 	@extend %clearfix
-
+	
+	h2.info
+		text-align: center
+		margin: 3em 0 2em 0
 
 	article.video
 		border: 10px solid white
@@ -172,6 +175,12 @@ section.videos
 		width: 50%
 		transition: background-color 0.5s, color 0.5s
 		cursor: pointer
+		
+		.icon
+			background-image: url(resources/arrow-right.png)
+			background-repeat: no-repeat
+			height: 32px
+			width: 32px
 
 		&:hover, &:focus
 			background-color: $blue
@@ -179,15 +188,9 @@ section.videos
 		&.checked
 			background-color: $blue
 
-			a
-				color: white
-
-
 
 		&:nth-child(2n+2)
 			clear: left
-
-
 
 		iframe
 			margin: auto
@@ -199,8 +202,10 @@ section.videos
 		h3
 			text-align: center
 			margin-bottom: 1em
-
 		
+			&:hover, &:focus
+				color: white
+
 		.votes
 			width: 100%
 			text-align: center
@@ -212,6 +217,7 @@ section.videos
 			span
 				font-size: 1.3em
 				color: $pink
+
 		.submit
 			clear: both
 			margin: auto
