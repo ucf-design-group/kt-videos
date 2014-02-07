@@ -12,6 +12,4 @@
 <!-- PAGE CONTENT START -->
 <?php the_content(); ?>
 <!-- PAGE CONTENT END -->
-
-
-					</article>
+</article>
