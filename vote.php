@@ -25,7 +25,7 @@ get_header(); ?>
 					}
 					else {
 ?>
-					<h2 class="info">Vote for a Video:</h2>
+					<h2 class="info">Vote for a Video or Click the Title for More Information:</h2>
 <?php
 					}
 
