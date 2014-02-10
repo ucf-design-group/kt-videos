@@ -22,7 +22,7 @@ $yellow: #F8ED31
 $green: #99cc33
 $pink: #EC008B
 $lightpink: #ffcbd7
-$blue: #00ADEF 
+$blue: #00ADEF
 $lightgrey: #dddddd
 $transparent: rgba(0, 0, 0, 0.75)
 $fallback: rgb(49, 49, 49)
@@ -133,6 +133,45 @@ footer
 	&:after
 		clear: both
 
+// Home Page
+.page-home
+	.main
+		width: 70%
+// Countdown Timer Styles
+
+.countdown-timer
+	font-family: 'Covered By Your Grace', cursive
+	font-size: 10px
+	text-align: center
+	text-shadow: 2px 2px #000000
+	background-color: $transparent
+
+	div
+		display: inline-block
+		font-size: 14em
+		width: 1.25em
+
+	.countdown-label
+		color: #ffffff
+		display: block
+		font-size: 32px
+		font-size: 2rem
+
+	#days
+		color: $pink //#db4844
+
+	#hours
+		color: $yellow //#f07c22
+
+	#minutes
+		color: $blue //#f6da74
+
+	#seconds
+		color: $green //#abcd58
+		
+	h1
+		color: #eeeeee
+		font-size: 7em
 
 
 // Video Vote Page
@@ -226,45 +265,7 @@ section.videos
 			text-align: center
 
 
-
-// Countdown Timer Styles
-
-.countdown-timer
-	font-family: 'Covered By Your Grace', cursive
-	font-size: 10px
-	text-align: center
-	text-shadow: 2px 2px #000000
-	background-color: $transparent
-
-	div
-		display: inline-block
-		font-size: 14em
-		width: 1.25em
-
-	.countdown-label
-		color: #ffffff
-		display: block
-		font-size: 32px
-		font-size: 2rem
-
-	#days
-		color: $pink //#db4844
-
-	#hours
-		color: $yellow //#f07c22
-
-	#minutes
-		color: $blue //#f6da74
-
-	#seconds
-		color: $green //#abcd58
-		
-	h1
-		color: #ffffff
-		font-size: 7em
-
-
-// Start Mobile Styles
+// Mobile Styles
 
 @media screen and (max-width: 1000px)
 	
