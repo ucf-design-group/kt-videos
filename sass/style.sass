@@ -65,9 +65,7 @@ h3
 	margin: 0.5em 0 0.5em 0
 	transition: color 0.5s
 	color: $pink
-	
-	&:hover
-		color: $blue
+
 a
 	color: white
 	text-decoration: none
@@ -199,12 +197,16 @@ section.videos
 			height: 270px
 			margin-bottom: 1em
 		
-		h3
-			text-align: center
-			margin-bottom: 1em
-		
+		a
+
 			&:hover, &:focus
 				color: white
+			
+				h3
+					color: white
+			h3	
+				text-align: center
+				margin-bottom: 1em
 
 		.votes
 			width: 100%
@@ -260,3 +262,61 @@ section.videos
 	h1
 		color: #ffffff
 		font-size: 7em
+
+
+// Start Mobile Styles
+
+@media screen and (max-width: 1000px)
+	
+	header
+		background-size: auto
+
+
+@media screen and (max-width: 950px)
+
+	.steps
+
+		li
+			float: none
+			margin: auto
+			background-image: none
+			background-position: 0% 0%
+			text-align: center
+			padding: 15px 0px
+			width: 50%
+
+			&:nth-child(2)
+				margin: 0.5em auto
+
+	section.videos article.video
+		
+		float: none
+		width: auto
+		max-width: 500px
+		margin: auto
+		
+@media screen and (max-width: 615px)
+
+
+
+
+@media screen and (max-width: 750px)
+	
+	div.logo
+		
+		background-repeat: no-repeat 
+		-webkit-background-size: 100%
+		-o-background-size: 100%
+		background-size: 100%
+		
+		padding-top: 26.2666667%
+		height: 0
+		width: 100%
+
+
+@media screen and (max-width: 440px)
+	
+	section.videos article.video iframe
+
+		width: 270px
+		height: 210px
