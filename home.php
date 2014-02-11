@@ -10,8 +10,8 @@ get_header(); ?>
 						get_template_part( 'content', 'page' );
 					} ?>
 				</div>
-				<div class="image">
-					<img src="" alt="">
+				<div class="main2">
+					<div class="image"></div>
 				</div>
 			</div>
 			<!-- Complete credit for the beautiful timer: http://codepen.io/mel/details/nleBw -->

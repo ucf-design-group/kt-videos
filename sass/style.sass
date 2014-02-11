@@ -36,7 +36,7 @@ html
 body
 	font: 62.5%/1.5 $baseTypeFace
 	font-weight: 600 
-	background-color: #ffffff
+	background-color: white
 	font-size: 1em
 
 section, .content
@@ -73,8 +73,7 @@ a
 
 	&:hover
 		color: $blue
-p
-	margin: 1em 0 0.5em 0
+
 
 .content
 	text-align: center
@@ -117,6 +116,7 @@ nav
 	margin: auto
 	max-width: 1000px
 	padding: 1em
+	@extend %clearfix
 
 footer
 	background-color: $transparent
@@ -135,9 +135,25 @@ footer
 
 // Home Page
 .page-home
+
 	.main
-		width: 70%
+		width: 58%
+		float: left
+
+	.main2
+		max-width: 38%
+		margin: 1em
+		float: right	
+
+		.image
+			height: 435px
+			width: 400px
+			background-image: url(resources/ktcountdown.png)
+			background-repeat: no-repeat
+			
+
 // Countdown Timer Styles
+
 
 .countdown-timer
 	font-family: 'Covered By Your Grace', cursive
@@ -170,9 +186,8 @@ footer
 		color: $green //#abcd58
 		
 	h1
-		color: #eeeeee
+		color: #ffffff
 		font-size: 7em
-
 
 // Video Vote Page
 
@@ -206,13 +221,16 @@ section.videos
 	article.video
 		border: 10px solid white
 		border-radius: 20px
-		background-color: #dddddd
+		background-color: $lightgrey
 		float: left
 		padding: 1em
 		width: 50%
 		transition: background-color 0.5s, color 0.5s
 		cursor: pointer
-		
+
+		p 
+			margin: 1em 0 0.5em 0
+			
 		.icon
 			background-image: url(resources/arrow-right.png)
 			background-repeat: no-repeat
@@ -309,7 +327,6 @@ section.videos
 		-webkit-background-size: 100%
 		-o-background-size: 100%
 		background-size: 100%
-		
 		padding-top: 26.2666667%
 		height: 0
 		width: 100%
