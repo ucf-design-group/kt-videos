@@ -59,12 +59,12 @@ h1
 h2
 	font-size: 1.7em
 	margin: 1em 0 0.5em 0
-	color: $blue
+	color: $pink
 h3
 	font-size: 1.5em
 	margin: 0.5em 0 0.5em 0
 	transition: color 0.5s
-	color: $pink
+	color: $blue
 
 a
 	color: white
@@ -72,7 +72,7 @@ a
 	transition: color 0.5s
 
 	&:hover
-		color: $blue
+		color: $pink
 
 
 .content
@@ -193,6 +193,8 @@ footer
 
 .steps
 	width: 100%
+	padding-top: 1em
+	padding-bottom: 1.5em
 
 	li
 		float: left
@@ -205,7 +207,7 @@ footer
 		border-radius: 20px
 		background-color: $lightpink
 		color: $fallback
-		border: 3px solid $pink
+		border: 2px solid $pink
 
 		&:nth-child(2)
 			margin: 0 5%
@@ -230,6 +232,7 @@ section.videos
 
 		p 
 			margin: 1em 0 0.5em 0
+
 			
 		.icon
 			background-image: url(resources/arrow-right.png)
@@ -237,13 +240,12 @@ section.videos
 			height: 32px
 			width: 32px
 
-		&:hover, &:focus
-			background-color: $blue
-
 		&.checked
 			background-color: $blue
 
-
+			a, h3
+				color: white
+			
 		&:nth-child(2n+2)
 			clear: left
 
@@ -255,12 +257,13 @@ section.videos
 			margin-bottom: 1em
 		
 		a
+			color: $blue
 
 			&:hover, &:focus
-				color: white
+				color: $pink
 			
 				h3
-					color: white
+					color: $pink
 			h3	
 				text-align: center
 				margin-bottom: 1em
@@ -272,10 +275,25 @@ section.videos
 			p
 				float: left
 				width: 33.3333333%
-				
-			span
-				font-size: 1.3em
-				color: $pink
+				font-size: 1.9em
+				margin: 0.4em 0 0 0
+
+				a
+					color: $blue
+
+					&:hover
+						color: $pink
+
+				.label
+					font-size: 0.4em
+					float: left
+					width: 100%
+					color: $black
+
+				.total
+					color: $pink
+					font-family: 'Covered By Your Grace', cursive
+					font-size: 2em
 
 		.submit
 			clear: both
@@ -290,6 +308,49 @@ section.videos
 	header
 		background-size: auto
 
+	.page-home
+
+		.main
+			width: 100%
+			float: none
+
+		.main2
+			max-width: 100%
+			float: none	
+
+			.image
+				margin: auto
+	
+	section.single-video
+		max-width: 522px
+
+		float: none
+		
+		article.video
+			margin: auto
+			
+			div.video-container
+			
+				width: 100%
+				float: none
+				margin: auto
+
+			div.video-content
+				
+				padding-top: 1em
+				width: 100%
+				float: none
+				clear: both
+			
+			div.votes
+				width: 490px
+
+			div.submit
+				a
+					float: left
+
+	section.slider
+		display: none
 
 @media screen and (max-width: 950px)
 
@@ -313,9 +374,6 @@ section.videos
 		width: auto
 		max-width: 500px
 		margin: auto
-		
-@media screen and (max-width: 615px)
-
 
 
 

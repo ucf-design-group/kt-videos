@@ -8,55 +8,118 @@ $lightgrey: #dddddd
 $transparent: rgba(0, 0, 0, 0.75)
 $fallback: rgb(49, 49, 49)
 
+
+
+// Clearfix (to use, @extend %clearfix)
+
+%clearfix
+	zoom: 1
+	&:before, &:after
+		content: ""
+		display: table 
+	&:after
+		clear: both
+
+
+		
 section.single-video
 	
 	padding-top: 2em
 
 	article.video
 		width: 100%
+		// background: $blue
+		height: 460px
+		padding: 1em 1em 1em 1em
+		border-radius: 10px
+		color: black
+
 
 		@extend %clearfix
 		
 		div.video-container
-			width: 50%
+			width: 52.45%
 			float: left
+			height: 385px
+			background-color: $lightgrey
 
 			iframe
-				width: 480px
-				height: 290px
+				width: 490px
+				height: 296px
 
 		div.video-content
-			width: 50%
+			width: 47.55%
 			float: right
+			padding: 0 0 0 1.5em
 
 			h3
-				font-size: 2.5em
 				text-align: center
 
-			.votes
+			.video-info
 				width: 100%
-				text-align: center
+				height: 283px
 
 				p
+					font-size: 0.8em
+					// color: 
+					letter-spacing: 0.5px
+
+		div.votes
+			float: left
+			width: 100%
+			text-align: center
+			background-color: $lightgrey
+			margin: auto
+			border-bottom-left-radius: 20px
+			border-bottom-right-radius: 20px
+
+			p
+				margin: 0.4em 0 0 0
+				float: left
+				width: 33%
+				font-size: 1.9em
+				// color: $blue
+				// text-shadow: 0.99px 0.99px #000000
+			
+				.label
+					font-size: 0.4em
 					float: left
-					width: 33%
-					font-size: 3em
-
-					span
-						font-size: 0.5em
-						float: left
-						width: 100%
-
-				p.vote-total
+					width: 100%
+				.total
 					color: $pink
-					font-size: 3.5em
+			a
+				color: $blue
 
+				&:hover
+					color: $pink
+
+			p.vote-total
+				// color: $pink
+				font-size: 2.5em
+				
 	div.submit
-		padding: 2em 1em 1em 1em
-		text-align: center
+		padding: 2em 1em 0em 2em
+		width: 98%
+		height: 75px
+		margin: auto
+
+		a
+			clear: both
+			text-align: center
+			padding-left: 6.5em
+			color: $blue
+
+			&:hover
+				color: $pink
 
 		.email
-			width: 200px
+			width: 175px
+
+		input
+			border-radius: 3px
+		
+		label
+			// color: #ffffff
 
 section.slider
 

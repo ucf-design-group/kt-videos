@@ -36,6 +36,7 @@ get_header(); ?>
 						$title = get_the_title();
 						$videoid = get_post_meta($post->ID, 'kt-form-video', true);
 						$link = $post->guid;
+						$url = get_post_meta($post->ID, 'kt-form-url', true);
 
 						$donations = intval(get_post_meta($post->ID, 'kt-form-donations', true));
 						$votes = intval(get_post_meta($post->ID, 'kt-form-votes', true));
@@ -49,9 +50,9 @@ get_header(); ?>
 							<iframe src="http://www.youtube.com/embed/<?php echo $videoid; ?>" frameborder="0" allowfullscreen></iframe>
 							<input type="hidden" name="vote-form-video" value="<?php echo $post->ID; ?>">
 							<div class ="votes">	
-								<p>Donations: $<?php echo $donations; ?></p>
-								<p><span>Total: <?php echo $total; ?></span></p>
-								<p>Votes: <?php echo $votes; ?></p>
+								<p><a href="<?php echo $url; ?>"target=_blank><span class="label">Donations: </span>$<?php echo $donations; ?></a></p>
+								<p class="vote-total"><span class="label">Total: </span><span class="total"><?php echo $total; ?></span></p>
+								<p><span class="label">Votes: </span><?php echo $votes; ?></p>
 							</div>
 							<div class="submit">
 								<label for="email">E-mail Address: </label><input class="email" type="email" name="vote-form-email">
