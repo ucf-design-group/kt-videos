@@ -40,7 +40,7 @@ section.single-video
 		div.video-container
 			width: 52.45%
 			float: left
-			height: 385px
+			height: 305px
 			background-color: $lightgrey
 
 			iframe
@@ -57,7 +57,7 @@ section.single-video
 
 			.video-info
 				width: 100%
-				height: 283px
+				max-height: 500px
 
 				p
 					font-size: 0.8em
@@ -99,13 +99,13 @@ section.single-video
 				
 	div.submit
 		padding: 2em 1em 0em 2em
-		width: 98%
+		width: 100%
 		height: 75px
 		margin: auto
+		@extend %clearfix
 
 		a
 			clear: both
-			text-align: center
 			padding-left: 6.5em
 			color: $blue
 

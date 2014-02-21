@@ -333,10 +333,10 @@ section.videos
 
 			div.video-content
 				
-				padding-top: 1em
 				width: 100%
 				float: none
 				clear: both
+				padding: 1em 1.5em 0em 1.5em
 			
 			div.votes
 				width: 490px
@@ -384,6 +384,44 @@ section.videos
 		padding-top: 26.2666667%
 		height: 0
 		width: 100%
+
+@media screen and (max-width: 555px)
+	section.single-video
+
+		article.video
+			padding: 0em
+
+			div.video-container
+				position: relative
+				padding-bottom: 56.25%
+				padding-top: 30px
+				height: 0
+				overflow: hidden
+
+				iframe, object, embed
+					position: absolute
+					top: 0
+					left: 0
+					width: 100%
+					height: 100%
+
+			div.votes
+				width: 100%
+
+@media screen and (max-width: 515px)
+	section.single-video
+
+		article.video
+
+			div.submit
+				padding: 2em 0em 0em 0em
+				text-align: center
+
+				label
+					font-size: 0.8em
+
+				a
+					padding-left: 0em
 
 
 @media screen and (max-width: 440px)

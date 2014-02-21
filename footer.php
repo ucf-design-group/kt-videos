@@ -12,7 +12,7 @@
 			<p>
 				© <?php echo date('Y'); ?> University of Central Florida Office of Student Involvement<br />
 				Student Union, Room 208, 12715 Pegasus Drive, Orlando, FL 32816-3245<br />
-				email: <a href="mailto:osi@ucf.edu">osi@ucf.edu</a> | phone: <a href="tel:4078236471">407.823.6471</a> | fax: <a href="tel:4078235899">407.823.5899</a><br />
+				Email: <a href="mailto:osi@ucf.edu">osi@ucf.edu</a> | Phone: <a href="tel:4078236471">407.823.6471</a> | Fax: <a href="tel:4078235899">407.823.5899</a><br />
 			</p>
 		</footer>
 		
