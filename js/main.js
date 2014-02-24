@@ -55,6 +55,7 @@ $(document).ready(function () {
 			});
 
 			$(this).addClass("checked");
+			$(this).find(".email").focus();
 		}
 	});
 	setInterval(function() { countdownTimer(); }, 1000);
@@ -94,8 +95,7 @@ function timer() {
     seconds = parseInt(seconds_left % 60);
      
     countdown.innerHTML = days + " " + hours + " "
-    + minutes + " " + seconds + " ";  
- 
+    + minutes + " " + seconds + " ";
 }
 
 
@@ -121,6 +121,5 @@ function countdownTimer() {
 	$("#days").html(days + "<span class='countdown-label'>Days</span>");
 	$("#hours").html(hours + "<span class='countdown-label'>Hours</span>");
 	$("#minutes").html(minutes + "<span class='countdown-label'>Minutes</span>");
-	$("#seconds").html(seconds + "<span class='countdown-label'>Seconds</span>");		
-
+	$("#seconds").html(seconds + "<span class='countdown-label'>Seconds</span>");
 }
