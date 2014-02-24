@@ -41,7 +41,7 @@ get_header(); ?>
 						$donations = intval(get_post_meta($post->ID, 'kt-form-donations', true));
 						$votes = intval(get_post_meta($post->ID, 'kt-form-votes', true));
 
-						$total = intval($votes + $donations / 10);
+						$total = intval($votes + $donations);
 
 ?>	
 					<article class="video">
