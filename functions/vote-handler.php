@@ -19,7 +19,7 @@ function count_votes () {
 		return "You didn't vote!";
 
 
-	$db = new mysqli("localhost", "osi-admin", "Gold&Black", "kt-votes");
+	$db = new mysqli("localhost", "osi-admin", "Gold&Black", "kt-videos");
 
 	$check = $db->query("SELECT * FROM `emails` WHERE email='" . $_POST['vote-form-email'] . "';");
 
@@ -40,7 +40,8 @@ function count_votes () {
 		update_post_meta(intval($videoID), 'kt-form-votes', $new);
 
 
-	$db->query("INSERT INTO `emails` VALUES ('" . $_POST['vote-form-email'] . "');");
+	$db->query("INSERT INTO `emails` VALUES ('" . $_POST['vote-form-email'] .
+									"', " . $_POST['vote-form-video'] . ");");
 
 	return "Thank you!  Your vote has been cast.";
 }
